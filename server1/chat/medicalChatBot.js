@@ -1,4 +1,4 @@
-const groq = require("../utils/groq");
+const groq_client = require("../utils/groq");
 
 const medicalChatBot = async (userQuestion) => {
   const prompt = `
