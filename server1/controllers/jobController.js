@@ -1,5 +1,5 @@
 const { Op } = require('sequelize');
-const Job = require('../models');
+const Job = require('../models/Job');
 
 // Create a new job
 const createJob = async (req, res) => {
