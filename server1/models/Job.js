@@ -1,7 +1,8 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../db');
+const User = require('./User'); // Import User model for association
 
-const Job = sequelize.define('User', {
+const Job = sequelize.define('Job', {
     title: {
         type: DataTypes.STRING,
         allowNull: false
@@ -19,21 +20,29 @@ const Job = sequelize.define('User', {
         allowNull: true
     },
     employmentType: {
-        type: DataTypes.ENUM('full-time', 'part-time', 'contract', "internship", 'locum'),
+        type: DataTypes.ENUM('full-time', 'contract', "internship", 'locum'),
         allowNull: false
     },
-    requirements: {
-        type: DataTypes.TEXT,
+    employmentLevel: {
+        type: DataTypes.ENUM('entry', 'mid', 'senior', "director"),
+        allowNull: false
+    },
+    organization: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    organizationLogo: {
+        type: DataTypes.STRING,
         allowNull: true
     },
-    jobLevel: {
-        type: DataTypes.ENUM('entry', 'mid', 'senior', "director"),
-        allowNull: false
-    },
-    jobLevel: {
-        type: DataTypes.ENUM('entry', 'mid', 'senior', "director"),
-        allowNull: false
-    },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: User, // ✅ this uses the actual model and respects `tableName: 'users'`
+          key: 'id'
+        }
+      }
 }, {
     timestamps: true,
     tableName: 'jobs'
