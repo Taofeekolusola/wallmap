@@ -15,7 +15,7 @@ const {
 } = require('../controllers/jobController');
 const { verifyToken } = require('../middleware/auth');
 
-router.post('/', createJob);
+router.post('/', verifyToken, createJob);
 router.get('/', getAllJobs);
 router.get('/search', searchJobs);
 router.get('/search/location', searchJobsByLocation);
