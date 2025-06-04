@@ -19,7 +19,7 @@ router.post('/', verifyToken, createJob);
 router.get('/', verifyToken, getAllJobs);
 router.get('/search', verifyToken, searchJobs);
 router.get('/search/location', verifyToken, searchJobsByLocation);
-router.get('/full-time', verifyToken, getFullTimeJobs);
+router.get('/fulltime', verifyToken, getFullTimeJobs);
 router.get('/contract', verifyToken, getContractJobs);
 router.get('/internship', verifyToken, getInternshipJobs);
 router.get('/locum', verifyToken, getLocumJobs);
