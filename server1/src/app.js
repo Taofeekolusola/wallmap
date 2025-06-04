@@ -22,6 +22,7 @@ dotenv.config();
 // app.use(cors(corsOptions));
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const userRoutes = require('../routes/userRoute');
 app.use('/api/users', userRoutes);

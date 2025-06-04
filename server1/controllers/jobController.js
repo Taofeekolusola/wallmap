@@ -19,7 +19,6 @@ const createJob = async (req, res) => {
             employmentType,
             employmentLevel,
             organization,
-            organizationLogo: req.file ? req.file.path : null, // Assuming file upload middleware is used
             userId: req.user.id // Assuming req.user is set by authentication middleware
         });
 

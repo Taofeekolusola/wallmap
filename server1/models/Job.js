@@ -31,10 +31,6 @@ const Job = sequelize.define('Job', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    organizationLogo: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
     userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
