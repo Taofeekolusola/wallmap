@@ -30,8 +30,8 @@ User.hasMany(Job, {
 
 module.exports = {
     sequelize,
-  User,
-  Job,
+    User,
+    Job,
   // UserProfile,
   // Education,
   // Experience,
