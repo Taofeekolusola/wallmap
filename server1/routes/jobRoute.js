@@ -16,15 +16,15 @@ const {
 const { verifyToken } = require('../middleware/auth');
 
 router.post('/', verifyToken, createJob);
-router.get('/', getAllJobs);
-router.get('/search', searchJobs);
-router.get('/search/location', searchJobsByLocation);
-router.get('/full-time', getFullTimeJobs);
-router.get('/contract', getContractJobs);
-router.get('/internship', getInternshipJobs);
-router.get('/locum', getLocumJobs);
-router.get('/:id', getJobById);
-router.get('/:id/salary', getJobSalary);
+router.get('/', verifyToken, getAllJobs);
+router.get('/search', verifyToken, searchJobs);
+router.get('/search/location', verifyToken, searchJobsByLocation);
+router.get('/full-time', verifyToken, getFullTimeJobs);
+router.get('/contract', verifyToken, getContractJobs);
+router.get('/internship', verifyToken, getInternshipJobs);
+router.get('/locum', verifyToken, getLocumJobs);
+router.get('/:id', verifyToken, getJobById);
+router.get('/:id/salary', verifyToken,  getJobSalary);
 router.delete('/:id', verifyToken, deleteJob);
 
 module.exports = router;
